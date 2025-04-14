@@ -1,0 +1,54 @@
+services:
+
+  laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    healthcheck:
+      test: ["CMD", "pgrep", "php-fpm"]
+      interval: 5s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ../../laravel:/var/www/investplusplus
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - laranet
+
+  nginx:
+    build:
+      context: ../nginx
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+      - 8443:443
+    networks:
+      - laranet
+    depends_on:
+      laravel:
+        condition: service_healthy
+  postgres:
+    image: postgres:17.4-alpine
+    user: 1000:1000
+    restart: always
+    env_file:
+      - ./.env
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - laranet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  laranet:
