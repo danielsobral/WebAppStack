@@ -1,1 +1,1 @@
-testando
+Arquivo adicionado para que a pasta Laravel suba junto com o projeto no git
