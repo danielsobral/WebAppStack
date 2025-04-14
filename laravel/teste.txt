@@ -1,1 +1,1 @@
-Arquivo adicionado para que a pasta Laravel suba junto com o projeto no git
+Arquivo adicionado para que a pasta Laravel suba junto com o projeto no git, favor apagar este arquivo quando fazer o clone deste repositório.
