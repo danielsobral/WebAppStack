@@ -33,8 +33,9 @@ docker compose up -d
 4. Em seguida, execute o comando:
 
 ```bash
-sudo chmod 777 -R docker/laravel/db
+sudo chmod 777 -R docker/laravel/db/
 ```
+5. caso não apareça os dados do Postgres na pasta data, feche e reabra o vscode
 
 Após a execução, os containers estarão prontos para uso. Você poderá acessar o projeto Laravel pelo navegador no seguinte endereço:
 
