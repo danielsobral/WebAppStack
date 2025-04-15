@@ -49,4 +49,3 @@ Certifique-se de atualizar os testes, caso necessário.
 ## Licença
 
 Este projeto está licenciado sob a licença MIT.
-```
