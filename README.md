@@ -16,10 +16,24 @@ docker compose up -d
 
 ## Instalação
 
-Após clonar o repositório, navegue até a raiz do projeto (onde está localizado o arquivo `docker-compose.yml`) e execute o comando:
+1. Após clonar o repositório, navegue até a raiz do projeto (onde está localizado o arquivo `docker-compose.yml`).
+
+2. Crie um arquivo `.env` dentro da pasta `docker/laravel`. Você pode usar o exemplo `.env.example` como base:
+
+```bash
+cp docker/laravel/.env.example docker/laravel/.env
+```
+
+3. Em seguida, ecrie uma pasta chamada db em docker/laravel e xecute o comando:
 
 ```bash
 docker compose up -d
+```
+
+4. Em seguida execute o comando:
+
+```bash
+sudo chmod 777 -R docker/laravel/db
 ```
 
 Após a execução, os containers estarão prontos para uso. Você poderá acessar o projeto Laravel pelo navegador no seguinte endereço:
