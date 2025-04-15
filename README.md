@@ -24,13 +24,13 @@ docker compose up -d
 cp docker/laravel/.env.example docker/laravel/.env
 ```
 
-3. Em seguida, ecrie uma pasta chamada db em docker/laravel e xecute o comando:
+3. Em seguida, crie uma pasta chamada `db` em `docker/laravel` e execute o comando:
 
 ```bash
 docker compose up -d
 ```
 
-4. Em seguida execute o comando:
+4. Em seguida, execute o comando:
 
 ```bash
 sudo chmod 777 -R docker/laravel/db
@@ -48,4 +48,5 @@ Certifique-se de atualizar os testes, caso necessário.
 
 ## Licença
 
-Este projeto está licenciado sob a licença [MIT](https://choosealicense.com/licenses/mit/).
+Este projeto está licenciado sob a licença MIT.
+```
