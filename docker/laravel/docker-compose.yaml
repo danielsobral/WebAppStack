@@ -34,7 +34,6 @@ services:
         condition: service_healthy
   postgres:
     image: postgres:17.4-alpine
-    user: 1000:1000
     restart: always
     env_file:
       - ./.env
